@@ -1,3 +1,4 @@
 # ePortfolio
 
-![Front page screenshot](https://github.com/Edward-Boguslavsky/ePortfolio/blob/main/public/images/front-page.png?raw=true)
+![Front page screenshot](https://github.com/Edward-Boguslavsky/ePortfolio/public/images/readme/front_page.png?raw=true)
+
