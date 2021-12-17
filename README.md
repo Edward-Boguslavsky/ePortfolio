@@ -2,7 +2,7 @@
 
 This is an ePortfolio I have built for myself with React.js which displays my interests and accomplishments in an interactive, iPadOS-style interface
 
-_THIS IS STILL A WORK IN PROGRESS_
+***THIS IS STILL A WORK IN PROGRESS***
 
 ## Screenshots
 
@@ -17,5 +17,5 @@ _THIS IS STILL A WORK IN PROGRESS_
 ## Future Plans
 
 1. Display information inside of apps
-2. Redirect [edwardboguslavsky.ca](www.edwardboguslavsky.ca) to ePortfolio (currently linked to old personal website)
+2. Redirect [edwardboguslavsky.ca](http://www.edwardboguslavsky.ca) to ePortfolio (currently linked to old personal website)
 3. Add interactive widgets to front page
