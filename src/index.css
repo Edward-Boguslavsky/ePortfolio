@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Urbanist:wght@300;500;700;900&display=swap');
+
+@keyframes open_page {
+    from {
+        transform: scale(0.75);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+:root {
+    --device-height: 600px;
+    --device-width: calc(var(--device-height) * 100 / 75);
+    --device-rotation: 358deg;
+    
+    --device-trim-size: calc(var(--device-height) / 300);
+    --device-bezel-size: calc(var(--device-height) / 25);
+    --device-bezel-radius: calc(var(--device-bezel-size) * 1.6);
+    --device-screen-radius: calc(var(--device-bezel-size) * 0.6);
+
+    --color-red-light: rgb(231, 77, 60); /* #E74D3C */
+    --color-red-dark: rgb(192, 57, 43); /* #C0392B */
+    --color-orange-light: rgb(230, 125, 34); /* #E67D22 */
+    --color-orange-dark: rgb(211, 84, 0); /* #D35400 */
+    --color-yellow-light: rgb(241, 196, 15); /* #F1C40F */
+    --color-yellow-dark: rgb(243, 156, 18); /* #F39C12 */
+    --color-green-light: rgb(46, 204, 112); /* #2ECC70 */
+    --color-green-dark: rgb(39, 174, 96); /* #27AE60 */
+    --color-turquoise-light: rgb(26, 188, 156); /* #1ABC9C */
+    --color-turquoise-dark: rgb(22, 160, 132); /* #16A084 */
+    --color-blue-light: rgb(52, 152, 219); /* #3498DB */
+    --color-blue-dark: rgb(41, 128, 185); /* #2980B9 */
+    --color-purple-light: rgb(156, 89, 182); /* #9C59B6 */
+    --color-purple-dark: rgb(142, 68, 173); /* #8E44AD */
+    --color-white-light: rgb(236, 240, 241); /* #ECF0F1 */
+    --color-white-dark: rgb(189, 195, 199); /* #BDC3C7 */
+    --color-gray-light: rgb(149, 165, 166); /* #95A5A6 */
+    --color-gray-dark: rgb(127, 140, 141); /* #7D8C8D */
+    --color-black-light: rgb(52, 73, 94); /* #34495E */
+    --color-black-dark: rgb(44, 62, 80); /* #2c3e50 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Urbanist', sans-serif;
+}
+
+#root {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background-color: #864E34;
+}
+
+#desktop {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+#device {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(var(--device-rotation));
+    background-color: rgb(29, 29, 29);
+    /*background-image: linear-gradient(125deg, rgb(216, 216, 216), rgb(164, 164, 164));*/
+    border: solid 2px rgb(190, 190, 190);
+    border-radius: var(--device-bezel-radius);
+    box-shadow: 4px 4px 8px 8px rgba(0, 0, 0, 0.2), 4px 4px 20px 20px rgba(0, 0, 0, 0.2);
+}
+
+#device_screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    position: relative;
+    margin: var(--device-bezel-size);
+    width: var(--device-width);
+    height: var(--device-height);
+    border-radius: var(--device-screen-radius);
+    overflow: hidden;
+}
+
+#status_bar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 12px;
+    transition: 0.15s ease-in-out;
+}
+
+#status_bar:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+#app_icon_grid {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    gap: 42px;
+}
+
+#app_icon {
+    width: 42px;
+    height: 54px;
+}
+
+#app_icon:hover #app_icon_image {
+    /*filter: brightness(1.25);*/
+    opacity: 0.6;
+}
+
+#app_icon_image {
+    display: block;
+    height: 42px;
+    width: 42px;
+    transition: 0.15s ease-in-out;
+}
+
+#app_icon_text {
+    display: block;
+    font-size: 7px;
+    font-weight: 500;
+    color: white;
+    text-shadow: 0 0 2px black;
+    line-height: 14px;
+    text-align: center;
+    text-transform: capitalize;
+    letter-spacing: 0.5px;
+}
+
+#app_icon_bar {
+    width: 80%;
+    height: 54px;
+    margin: 42px 0 12px 0;
+    background-color:rgba(0, 0, 0, 0.2);
+    border-radius: 16px;
+}
+
+#app_page {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background-color: white;
+    animation: open_page 0.15s ease-in-out;
+}
+
+.page_close {
+    animation: open_page 0.15s ease-in-out reverse;
+}
+
+#page_close_button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    height: 24px;
+    width: 24px;
+}
+
+#device_background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
